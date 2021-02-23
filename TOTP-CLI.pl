@@ -49,7 +49,8 @@ my $subcommand = {
     createQR => sub {
         my ($id) = @_;
         my $totp = $cfg{secret} ? TOTP->new( secret => $cfg{secret} ) : TOTP->new( $cfg{secret_length} );
-        say($totp->secret);
+        say('secret (would be saved in DB): ', $totp->secret);
+        printf( "%s\n%s %s %s\n", 'validate one time passwords with: ', 'perl TOTP-CLI.pl --secret', $totp->secret, 'validate {code}');
         my $qr = $totp->QR($cfg{issuer}, $id);
         _displayInFirefox($qr);
     },
