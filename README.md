@@ -6,6 +6,12 @@ demo for google authenticator totp (linux only)
 This is just a little demonstration and has no intention to be cross plattform. It uses some systemcalls, to require less perl packages and expects firefox to be present (for displaying the qr tag).
 
 Additional packages needed:
+* libmoose-perl
+* libdigest-hmac-perl
+* libimager-qrcode-perl
+* libcrypt-random-seed-perl
+
+---
 
     sudo apt-get install libmoose-perl libdigest-hmac-perl libimager-qrcode-perl libcrypt-random-seed-perl
 
